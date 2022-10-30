@@ -20,7 +20,7 @@ app.post('/submitted', function(req, res) {
   var fName = req.body.Firstname
   var lName = req.body.Lastname
   var Email = req.body.Email
-
+  console.log(Email)
   // Make a POST request to send this data to mailchimp
 
   client.setConfig({
@@ -30,6 +30,7 @@ app.post('/submitted', function(req, res) {
 
   const run = async () => {
     try{
+      console.log('posting to mailchimp')
     const response = await client.lists.addListMember("a965cef93d", {
       email_address: Email,
       status: "subscribed",
