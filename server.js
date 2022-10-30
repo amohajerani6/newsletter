@@ -41,34 +41,11 @@ app.post('/submitted', function(req, res) {
     });
     res.sendFile(__dirname + '/success.html')
   } catch (err) {
+    console.log(err)
     res.sendFile(__dirname + '/failure.html')}
   };
 
   run();
 })
-
-
-
-
-
-
-
-
-
-//  var apiKey='a2f2a5943e5cb605105f9873255c39e8-us21'
-//  var listId='a965cef93d'
-
-
-// respond by saying if it went through or not
-
-
-//if (true) {
-//  res.sendFile(__dirname + '/success.html')
-//} else {
-//  res.sendFile(__dirname + '/failure.html')
-//}
-
-
-
 
 app.listen(process.env.PORT || 3000, console.log('listening'))
